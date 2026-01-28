@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Project Report Generator</title>
+</head>
+<body>
+  <h1>Project Report Generator</h1>
+
+<label>Project ID: <input type="number" id="projectId" value="41"></label> <br><br>
+
+<button onclick="fetchFullReport()">Fetch Full Report</button> <button onclick="fetchControlDoc()">Fetch Control Doc</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    async function fetchFullReport() {
+      const projectId = document.getElementById('projectId').value;
+      const output = document.getElementById('output');
+      
+      console.log(`Fetching Full Project Report for project ID: ${projectId}`);
+      output.textContent = `Fetching Full Project Report for project ID: ${projectId} ...`;
+
+      try {
+        const response = await fetch(`/generate-full-report/${projectId}`);
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        console.error('Fetch error (Full Report):', err);
+        output.textContent = 'Fetch error (Full Report): ' + err;
+      }
+    }
+
+    async function fetchControlDoc() {
+      const projectId = document.getElementById('projectId').value;
+      const output = document.getElementById('output');
+
+      console.log(`Fetching Control Doc for project ID: ${projectId}`);
+      output.textContent = `Fetching Control Doc for project ID: ${projectId} ...`;
+
+      try {
+        const response = await fetch(`/generate-control-doc/${projectId}`);
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        console.error('Fetch error (Control Doc):', err);
+        output.textContent = 'Fetch error (Control Doc): ' + err;
+      }
+    }
+  </script>
+
+  <button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+  function downloadPDF() {
+    const projectId = document.getElementById('projectId').value;
+    window.location.href = `/download-report/${projectId}`;
+  }
+</script>
+
+
+</body>
+</html>

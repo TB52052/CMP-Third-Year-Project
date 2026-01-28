@@ -1,0 +1,30 @@
+Keyword,Meaning,Likelihood
+routine,occurs during normal operation,5
+frequent,regularly encountered,5
+continuous,constant exposure,5
+uncontrolled,no mitigation in place,5
+failure,known malfunction risk,4
+degradation,wear or aging present,4
+manual,dependent on human action,4
+maintenance,requires upkeep to prevent,4
+human error,operator dependent,4
+exposed,unprotected or open,4
+weather,environmentally driven,4
+wet,condition commonly present,4
+dusty,airborne particles likely,4
+misuse,reasonably foreseeable misuse,3
+inadequate,insufficient control or design,3
+intermittent,occurs occasionally,3
+testing,occurs during specific activities,3
+transport,movement-related exposure,3
+construction,temporary or changing conditions,3
+alarm failure,loss of warning function,3
+redundancy failure,single point of failure,3
+rare,unusual operating condition,2
+specialist,requires expert intervention,2
+shielded,protected by design,2
+automated,limited human involvement,2
+monitored,actively supervised,2
+exceptional,only under extreme conditions,1
+theoretical,credible but unlikely,1
+isolated,highly limited exposure,1

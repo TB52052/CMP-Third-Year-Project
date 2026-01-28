@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hazard AI Prediction</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; background: #f8f9fa; }
+  h1 { text-align: center; }
+  form, #results { max-width: 600px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  input, textarea, button { width: 100%; margin: 10px 0; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
+  button { background: #007bff; color: white; border: none; cursor: pointer; }
+  button:hover { background: #0056b3; }
+</style>
+</head>
+<body>
+<h1>Hazard Severity & Likelihood Prediction</h1>
+<form id="hazard-form">
+  <label>Hazard Name:</label>
+  <input type="text" id="hazard_name" name="hazard_name" required>
+  <label>Hazard Description:</label>
+  <textarea id="hazard_desc" name="hazard_desc" rows="5" required></textarea>
+  <button type="submit">Predict</button>
+</form>
+<div id="results" style="display:none;"></div>
+
+<script>
+document.getElementById('hazard-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const hazard_name = document.getElementById('hazard_name').value;
+    const hazard_desc = document.getElementById('hazard_desc').value;
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.style.display = 'block';
+    resultsDiv.innerHTML = '<p>Predicting...</p>';
+    try {
+        const response = await fetch('/predict-hazard', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ hazard_name, hazard_desc })
+        });
+        if (!response.ok) throw new Error('Prediction request failed');
+        const result = await response.json();
+        if(result.error) throw new Error(result.error);
+        resultsDiv.innerHTML = `
+            <p><strong>MLP Severity:</strong> ${result.severity.mlp}</p>
+            <p><strong>KNN Severity:</strong> ${result.severity.knn}</p>
+            <p><strong>Likelihood:</strong> ${result.likelihood}</p>
+        `;
+    } catch (err) {
+        resultsDiv.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
+    }
+});
+</script>
+</body>
+</html>
