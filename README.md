@@ -2,9 +2,9 @@
 3rd Year Project for CMP. Oracle APEX Hazard Analysis Application
 
 The contents of this GitHub Repository includes: 
-* -> APEX Application
-* -> Document Generation
-* -> Hazard Prediction
+-> APEX Application <br>
+-> Document Generation <br>
+-> Hazard Prediction <br>
 
 ## APEX Application
 . f250658.sql - Contains the Export File of the Application
