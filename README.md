@@ -1,5 +1,5 @@
 # CMP_EOYP
-3rd Year Project for CMP. Oracle APEX Hazard Analysis Application
+This contains all files regarding (Taylor Bullard) 3rd Year Project for CMP. 
 
 The contents of this GitHub Repository includes: <br>
 -> APEX Application <br>
@@ -26,5 +26,6 @@ The contents of this GitHub Repository includes: <br>
 * predict.py
 
 ## User Testing and Feedback
+* Analysis 
 * Form
-* Results
+* Responses
