@@ -18,8 +18,8 @@ Document Generation
 . package.json
 
 Hazard Prediction 
-> Packages - directory of all packages outputted
-> Lexicons - directory of all Lexicons used
+>.  Packages - directory of all packages outputted
+. Lexicons - directory of all Lexicons used
 . app.py
 . hazard_predict.html - page implemented in APEX Application
 . model_analysis.py
