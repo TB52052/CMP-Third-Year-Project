@@ -1,0 +1,77 @@
+Keyword,Likelihood
+rarely,1
+very rare,1
+one-off,1
+isolated,1
+exceptional,1
+unlikely,2
+sporadic,2
+infrequent,2
+unexpected,2
+not expected,2
+possible,3
+sometimes,3
+occasionally,3
+intermittent,3
+could occur,3
+likely,4
+often,4
+regular,4
+routine,4
+common,4
+almost certain,5
+frequently,5
+always,5
+continuous,5
+persistent,5
+poor maintenance,5
+aging equipment,4
+wear and tear,4
+untrained staff,5
+operator error,4
+unguarded,5
+faulty,4
+wet surface,4
+uneven surface,4
+high traffic,5
+poor lighting,4
+"known issue,5",
+"previous incidents,5",
+"history of failure,5",
+,
+"poor maintenance,5",
+"lack of maintenance,5",
+"inadequate maintenance,5",
+"aging equipment,4",
+"outdated equipment,4",
+"wear and tear,4",
+,
+"untrained staff,5",
+"inadequate training,5",
+"operator error,4",
+"human error,4",
+"misuse,4",
+,
+"no guard,5",
+"unguarded,5",
+"exposed,5",
+"damaged,4",
+"faulty,4",
+"defective,4",
+"leaking,4",
+"corroded,4",
+"blocked,3",
+"loose,4",
+,
+"slippery,4",
+"wet surface,4",
+"uneven surface,4",
+"cluttered,4",
+"congested,4",
+"crowded,4",
+"high traffic,5",
+"busy area,5",
+,
+"poor lighting,4",
+"limited visibility,4",
+"restricted access,3",
