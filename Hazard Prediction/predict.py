@@ -180,8 +180,7 @@ plt.show()
 #print(model.predict("Slips and trips"))
 
 
-#LIKELIHOOD PREDICTION
-# LIKELIHOOD PREDICTION
+# likelihood prediction
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, accuracy_score, ConfusionMatrixDisplay
@@ -199,7 +198,7 @@ test['text'] = test['Hazard Name'].fillna('') + ' ' + test['Hazard Description']
 #load likelihood lexicon
 likelihood_lexicon = pd.read_csv("HAZARD–SEMANTIC LEXICON likelihood.csv")
 
-# CLEAN keywords safely
+# sanitise keywords 
 likelihood_lexicon['Keyword'] = (
     likelihood_lexicon['Keyword']
     .astype(str)
@@ -303,8 +302,7 @@ model_likelihood = MLPClassifier(
     max_iter=1000,
     random_state=42
 )
-
-# Pass sample_weight based on class weight
+# fit
 model_likelihood.fit(X_train_likelihood, y_train_likelihood)
 
 
