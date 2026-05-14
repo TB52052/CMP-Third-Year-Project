@@ -5,6 +5,8 @@ The contents of this GitHub Repository includes: <br>
 -> APEX Application <br>
 -> Document Generation <br>
 -> Hazard Prediction <br>
+-> Report <br>
+-> Testing <br>
 
 ## APEX Application
 * f250658.sql - Contains the Export File of the Application
@@ -25,7 +27,10 @@ The contents of this GitHub Repository includes: <br>
 * model_analysis.py
 * predict.py
 
-## User Testing and Feedback
+## Report
+* Project Portfolio Report 
+
+## Testing
 * Analysis 
 * Form
 * Responses
