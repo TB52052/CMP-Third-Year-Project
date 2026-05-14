@@ -3,7 +3,6 @@ import joblib
 import numpy as np
 import pandas as pd
 
-#utuilising flask to use python code on a webpage front end 
 app = Flask(__name__)
 
 # load models .pkl from previous file
@@ -31,9 +30,7 @@ likelihood_lexicon = likelihood_lexicon[
 likelihood_keywords = likelihood_lexicon['Keyword'].tolist()
 likelihood_dict = dict(zip(likelihood_lexicon['Keyword'], likelihood_lexicon['Likelihood']))
 
-# --------------------------
-# Utility functions
-# --------------------------
+# Functions for computing and searching
 def find_keywords(description):
     if pd.isna(description):
         return []
@@ -66,9 +63,7 @@ def compute_mean_likelihood(matched):
     values = [likelihood_dict[k] for k in matched if k in likelihood_dict]
     return float(np.mean(values)) if values else 0.0
 
-# --------------------------
 # API route
-# --------------------------
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
@@ -133,7 +128,7 @@ def home():
             "likelihood": int(likelihood_pred)
         }
 
-    # HTML form
+    # HTML form to host on webpage
     html = """
     <!DOCTYPE html>
     <html>
