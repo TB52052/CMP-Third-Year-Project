@@ -39,7 +39,7 @@ test = test.copy()
 #print(f"Test set: {len(test)}")
 
 
-#SEVERITY PREDICTION
+# severity prediction
 
 #read in semantic lexicon
 lexicon = pd.read_csv("HAZARD–SEMANTIC LEXICON.csv")
